@@ -37,7 +37,7 @@ def main(dmlr, dmstep, base_model = "CompVis/stable-diffusion-v1-4", weight_name
      model_names = [name for name in os.listdir(models_dir) if os.path.isdir(os.path.join(models_dir, name))]
 
      for model_name in model_names:
-          if ("mice" in model_name or "Mice" in model_name):
+          if "mice" in model_name or "Mice" in model_name:
                print(f"Processing LoRA Weights: {model_name}")
                lora_path = os.path.join(models_dir, model_name)
 

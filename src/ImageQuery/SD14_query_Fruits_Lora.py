@@ -40,7 +40,7 @@ def main(base_model = "CompVis/stable-diffusion-v1-4", weight_name = "pytorch_lo
      model_names = [name for name in os.listdir(models_dir) if os.path.isdir(os.path.join(models_dir, name))]
 
      for model_name in model_names:
-          if ("banana" in model_name or "Banana" in model_name) and "PGD" in model_name:
+          if "banana" in model_name or "Banana" in model_name:
                print(f"Processing LoRA Weights: {model_name}")
                lora_path = os.path.join(models_dir, model_name)
 
