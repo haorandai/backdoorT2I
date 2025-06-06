@@ -1,6 +1,6 @@
-# BackdoorT2I: Text-to-Image Backdoor Attack Framework
+# T2I Backdoor Attacks Impl
 
-A comprehensive framework for implementing backdoor attacks on text-to-image diffusion models.
+ Implementation of backdoor attacks on text-to-image diffusion models.
 
 ## Overview
 
