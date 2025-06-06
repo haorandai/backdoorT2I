@@ -12,7 +12,7 @@ iterations = [400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300]
 alphas = [0.08, 0.05, 0.03, 0.02, 0.01, 0.008, 0.005, 0.003, 0.002, 0.001]
 epsilon = 0.1
 
-folder = f'runningtimetest/banana_{epsilon}'
+folder = f'banana_{epsilon}'
 if folder not in os.listdir():
     os.makedirs(folder)
 
