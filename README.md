@@ -23,10 +23,3 @@ This project implements a framework for studying backdoor attacks on text-to-ima
 #### `ImageQuery/`
 - Tools for querying backdoored models with trigger patterns
 - Image generation scripts
-
-
-
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
