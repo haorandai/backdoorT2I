@@ -6,7 +6,7 @@ from huggingface_hub import login
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_name", type=str, default="CompVis/stable-diffusion-v1-4")
+    parser.add_argument("--model_name", type=str, default="black-forest-labs/FLUX.1-dev")
     parser.add_argument("--dataset_name", type=str, required=True)
     parser.add_argument("--output_dir", type=str, required=False)
     parser.add_argument("--resolution", type=int, default=224)
@@ -14,12 +14,12 @@ def parse_args():
     parser.add_argument("--num_train_epochs", type=int, default=500)
     parser.add_argument("--learning_rate", type=float, default=5e-05)
     parser.add_argument("--hf_token", type=str, required=True)
-    parser.add_argument("--max_train_steps", type=int, default=500)
+    parser.add_argument("--max_train_steps", type=int, default=1000)
     parser.add_argument("--lr_scheduler", type=str, default="constant")
     parser.add_argument("--lr_warmup_steps", type=int, default=0)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--rank", type=int, default=4)
-    parser.add_argument("--gradient_accumulation_steps", type=int, default=1)
+    parser.add_argument("--gradient_accumulation_steps", type=int, default=4)
     parser.add_argument("--mixed_precision", type=str, default="no", choices=["no", "fp16", "bf16"])
     return parser.parse_args()
 
@@ -36,7 +36,7 @@ def main():
     
     train_cmd = [
         "accelerate", "launch",
-        "train_text_to_image_lora.py",
+        "train_text_to_image_lora_flux.py",
         f"--pretrained_model_name_or_path={args.model_name}",
         f"--dataset_name={args.dataset_name}",
         f"--output_dir={save_model_path}",
